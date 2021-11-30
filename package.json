@@ -1,0 +1,23 @@
+{
+  "name": "discord_record",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+		"build": "tsc",
+		"merge": "node dist/merge.js",
+		"convert": "ffmpeg -f s16le -ar 48000 -ac 2 -i recordings/merge.pcm out.mp3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+		"@discordjs/opus": "^0.3.2",
+		"@types/node": "^16.11.10",
+		"discord.js": "github:discordjs/discord.js#af00ec8970e77ea8a0afd21571eeeef9c554e1ec",
+		"dotenv": "^10.0.0",
+		"ffmpeg-static": "^4.2.7",
+		"typescript": "^4.5.2"
+	}
+}
